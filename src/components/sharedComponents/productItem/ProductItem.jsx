@@ -19,7 +19,7 @@ function ProductItem({
         className="group relative border border-gray-300 rounded-2xl p-3 overflow-hidden"
       >
         <div className="absolute right-1 top-1 z-10 flex w-full flex-wrap items-center gap-px lg:gap-0.5">
-          <span className="p-1 flex items-center justify-center gap-px rounded bg-gray-900  text-white lg:gap-0.5 text-xs">
+          <span className="p-1 flex items-center justify-center gap-px rounded-2xl bg-red-700  text-white lg:gap-0.5 text-xs">
             <BsFire size={15} className=" text-white text-4xl" />
             پرفروش
           </span>
@@ -27,7 +27,7 @@ function ProductItem({
         <motion.img
           src={image}
           alt={title}
-          className=" w-full object-contain   lg:aspect-auto lg:h-70 "
+          className=" w-full object-contain   lg:aspect-auto lg:h-50 "
           transition={{ duration: 0.5 }}
           whileHover={{ scale: 1.1 }}
         />

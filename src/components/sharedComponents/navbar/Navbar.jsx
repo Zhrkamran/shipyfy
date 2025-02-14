@@ -1,7 +1,5 @@
 import { Link, useLocation } from "react-router";
-import Container from "../container/Container";
 import { nav } from "./nav.constant";
-import styled from "./nav.module.css";
 import { useRef, useState } from "react";
 
 function Navbar() {
@@ -27,13 +25,11 @@ function Navbar() {
   };
   const location = useLocation();
   return (
-    <div className="shadow py-4">
-      <Container>
         <nav ref={menuRef} className="relative" onMouseLeave={handleLeave}>
           {nav.map((nav) => (
             <Link
               className={`me-4 ${
-                location.pathname === nav.to ? styled["active"] : ""
+                location.pathname === nav.to ? "text-red-700" : ""
               }`}
               key={nav.to}
               to={nav.to}
@@ -50,9 +46,7 @@ function Navbar() {
               opacity: activePos.opacity,
             }}
           />
-        </nav>
-      </Container>
-    </div>
+   </nav>
   );
 }
 

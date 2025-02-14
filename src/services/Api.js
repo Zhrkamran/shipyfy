@@ -10,7 +10,11 @@ export async function getProduct(id) {
     const {data}=await client(`/products/${id}`);
     return data;  
 }
-export async function getSliders() {
+export async function getHomeSliders() {
     const {data} =await client("/slider");
     return data; 
+}
+export async function getHomeBanners(placement) {
+    const {data}=await client('/banners');
+    return data.filter((item) => item.placement === placement);  
 }

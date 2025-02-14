@@ -1,16 +1,17 @@
-import Layouts from "./components/layouts/Layouts";
+
+import Layouts from "./components/sharedComponents/layouts/Layouts";
+import ShoppingContextProvider from "./context/ShoppingContext";
 import Approutes from "./routes/Approutes";
-
-
 
 function App() {
 
   return (
-    <>
-     <Layouts>
+    <ShoppingContextProvider>
+    <Layouts>
         <Approutes/>
      </Layouts>
-    </>
+    </ShoppingContextProvider>
+  
   )
 }
 

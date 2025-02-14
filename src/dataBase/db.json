@@ -25,7 +25,6 @@
             
         ]
       },
-
       { 
         "id": "2",
         "title": "رژلب مایع گیاهی پورگ کلاژن ", 
@@ -162,7 +161,6 @@
            
         ]
       }
-    
     ],
     "slider":[
       {
@@ -184,6 +182,79 @@
         "alt":"اسلایدر3",
         "link":""
       }
-    ]
+    ],
+    "banners": [
+    {
+      "id": "1",
+      "image": "https://nonegar14.ir/km/banner-top.png",
+      "alt": "بنر 1",
+      "link": "",
+      "placement": "top"
+    },
+    {
+      "id": "2",
+      "image": "https://nonegar14.ir/km/banner1.png",
+      "alt": "بنر میانه 1",
+      "link": "",
+      "placement": "middle",
+      "priority": 1
+    },
+    {
+      "id": "3",
+      "image": "https://nonegar14.ir/km/banner2.png",
+      "alt": "بنر میانه 2",
+      "link": "",
+      "placement": "middle",
+      "priority": 2
+    },
+    {
+      "id": "4",
+      "image": "https://nonegar14.ir/km/banner3.png",
+      "alt": "بنر میانه 3",
+      "link": "",
+      "placement": "middle",
+      "priority": 3
+    },
+    {
+      "id": "5",
+      "image": "https://nonegar14.ir/km/banner4.png",
+      "alt": "بنر میانه 4",
+      "link": "",
+      "placement": "middle",
+      "priority": 4
+    },
+    {
+      "id": "6",
+      "image": "https://nonegar14.ir/km/banner5.jpeg",
+      "alt": "بنر پایین 1",
+      "link": "",
+      "placement": "bottom",
+      "priority": 1
+    },
+    {
+      "id": "7",
+      "image": "https://nonegar14.ir/km/banner6.jpeg",
+      "alt": "بنر پایین 2",
+      "link": "",
+      "placement": "bottom",
+      "priority": 2
+    },
+    {
+      "id": "8",
+      "image": "https://nonegar14.ir/km/banner7.jpeg",
+      "alt": "بنر پایین 3",
+      "link": "",
+      "placement": "bottom",
+      "priority": 3
+    },
+    {
+      "id": "9",
+      "image": "https://nonegar14.ir/km/banner8.jpeg",
+      "alt": "بنر پایین 4",
+      "link": "",
+      "placement": "bottom",
+      "priority": 24
+    }
+  ]
 
   }
