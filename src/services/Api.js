@@ -18,3 +18,5 @@ export async function getHomeBanners(placement) {
     const {data}=await client('/banners');
     return data.filter((item) => item.placement === placement);  
 }
+
+

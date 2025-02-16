@@ -55,11 +55,11 @@ function ShoppingContextProvider({ children }) {
     });
   };
   
-
   return (
     <shoppingContext.Provider value={{ cartItems,increaseProductQty,getProductQty,decreaseProductQty,cartQty,removeProductFromCart}}>
       {children}
     </shoppingContext.Provider>
   );
 }
+
 export default ShoppingContextProvider;

@@ -10,18 +10,17 @@ import { useShoppingContext } from "../../context/ShoppingContext";
 function Product() {
   const { increaseProductQty, getProductQty, decreaseProductQty } =
     useShoppingContext();
-    
-    const { id } = useParams();
+
+  const { id } = useParams();
   const quantity = getProductQty(id);
 
-
-  const [product, setprodut] = useState({});
+  const [product, setproduct] = useState({});
   useEffect(() => {
-    async function ggetProductData() {
+    async function getProductData() {
       const data = await getProduct(id);
-      setprodut(data);
+      setproduct(data);
     }
-    ggetProductData();
+    getProductData();
   }, []);
   return (
     <Container>
