@@ -1,6 +1,8 @@
 import { IoStarSharp } from "react-icons/io5";
 import { BsFire } from "react-icons/bs";
 import { motion } from "framer-motion";
+import { numberWithCommas, calculateFinalPrice } from "../../../utils/number";
+
 function ProductItem({
   image,
   title,
@@ -36,7 +38,7 @@ function ProductItem({
           <h3 className="font-bold line-clamp-2  lg:text-body-14 min-h-10">
             {title}
           </h3>
-          <div className="flex justify-between mt-2">
+          <div className="flex justify-between mt-2 min-h-13">
             <div className="flex items-center">
               <p className="text-body2-strong text-neutral-700">
                 {rating.rate}
@@ -46,18 +48,27 @@ function ProductItem({
               </div>
             </div>
             <div className="flex flex-col">
-              <div>
-                <span className="text-gray-500 line-through text-base">
-                  2200
-                </span>
-                <span className="w-[33px] rounded-md bg-red-700 text-center  font-medium text-white lg:w-10 inline-block ms-1">
-                  %{discount}
-                </span>
-              </div>
-              <div className="text-lg font-medium text-gray-900">
-                {price}
-                <span className="text-xs ms-0.5">تومان</span>
-              </div>
+              {discount ? (
+                <>
+                  <div>
+                    <span className="text-gray-500 line-through text-base">
+                      {numberWithCommas(price)}
+                    </span>
+                    <span className="w-[33px] rounded-md bg-red-700 text-center  font-medium text-white lg:w-10 inline-block ms-1">
+                      %{discount}
+                    </span>
+                  </div>
+                  <div className="text-lg font-medium text-gray-900">
+                    {calculateFinalPrice(price, discount)}
+                    <span className="text-xs ms-0.5">تومان</span>
+                  </div>
+                </>
+              ) : (
+                <div className="text-lg font-medium text-gray-900">
+                  {numberWithCommas(price)}
+                  <span className="text-xs ms-0.5">تومان</span>
+                </div>
+              )}
             </div>
           </div>
         </div>

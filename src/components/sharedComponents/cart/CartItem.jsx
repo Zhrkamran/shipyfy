@@ -7,9 +7,10 @@ import { GoPlus } from "react-icons/go";
 import { FaMinus } from "react-icons/fa6";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useShoppingContext } from "../../../context/ShoppingContext";
+import { numberWithCommas, calculateFinalPrice } from "../../../utils/number";
 
 function CartItem({ id, qty }) {
-  const { increaseProductQty, decreaseProductQty } = useShoppingContext();
+  const { increaseProductQty, decreaseProductQty,removeProductFromCart } = useShoppingContext();
   const [product, setProduct] = useState([]);
   useEffect(() => {
     async function getProductData() {
@@ -50,7 +51,9 @@ function CartItem({ id, qty }) {
           </Button>
           <span className="px-2">{qty}</span>
           {qty == 1 ? (
-            <Button className="bg-white text-red-700 hover:bg-white hover:text-red-700 cursor-pointer">
+            <Button
+              onClick={()=> removeProductFromCart(id)}
+             className="bg-white text-red-700 hover:bg-white hover:text-red-700 cursor-pointer">
               <RiDeleteBinLine size={25} />
             </Button>
           ) : (
@@ -63,18 +66,31 @@ function CartItem({ id, qty }) {
           )}
         </div>
         <div className="flex items-center">
-          <div className="me-3">
-            <div className="px-2 text-center ">538,000</div>
-            <div className="text-lg font-medium text-gray-900">
-              {product.price}
-              <span className="text-xs ms-0.5">تومان</span>
+          {product.discount ? (
+            <>
+              <div className="me-3">
+                <div className="px-2 text-center text-gray-500 line-through text-base">
+                  {numberWithCommas(product.price)}
+                </div>
+                <div className="text-lg font-medium text-gray-900">
+                  {calculateFinalPrice(product.price, product.discount)}
+                  <span className="text-xs ms-0.5">تومان</span>
+                </div>
+              </div>
+              <div>
+                <span className="w-[33px] rounded-md bg-red-700 text-center  font-medium text-white lg:w-10 inline-block ms-1">
+                  {product.discount}٪
+                </span>
+              </div>
+            </>
+          ) : (
+            <div className="me-3">
+              <div className="text-lg font-medium text-gray-900">
+                {numberWithCommas(product.price)}
+                <span className="text-xs ms-0.5">تومان</span>
+              </div>
             </div>
-          </div>
-          <div>
-            <span className="w-[33px] rounded-md bg-red-700 text-center  font-medium text-white lg:w-10 inline-block ms-1">
-              {product.discount}٪
-            </span>
-          </div>
+          )}
         </div>
       </div>
     </div>

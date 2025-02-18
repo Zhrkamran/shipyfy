@@ -6,6 +6,7 @@ import Button from "../../components/coreComponents/button/Button";
 import { GoPlus } from "react-icons/go";
 import { FaMinus } from "react-icons/fa6";
 import { useShoppingContext } from "../../context/ShoppingContext";
+import { numberWithCommas, calculateFinalPrice } from "../../utils/number.js";
 
 function Product() {
   const { increaseProductQty, getProductQty, decreaseProductQty } =
@@ -41,14 +42,17 @@ function Product() {
             <div className="min-h-[352px] w-[316px] flex-col justify-between gap-6 rounded border border-gray-300 bg-gray-100 px-3 py-5 shadow-sm lg:flex">
               <div className="flex w-fit flex-col items-center gap-1 lg:gap-1.5">
                 <div className="flex items-center lg:gap-1">
-                  <span className="px-2 text-center ">538,000</span>
+                  <span className="px-2 text-center ">
+                    {numberWithCommas(product.price)}
+                  </span>
                   <span className="w-[33px] rounded-md bg-red-700 text-center  font-medium text-white lg:w-10 inline-block ms-1">
                     {product.discount}٪
                   </span>
                 </div>
                 <div className="flex items-center gap-1">
                   <span className="text-lg font-medium text-gray-900">
-                    {product.price}
+                    {calculateFinalPrice(product.price, product.discount)}
+
                     <span className="text-xs ms-0.5">تومان</span>
                   </span>
                 </div>

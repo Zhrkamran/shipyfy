@@ -1,5 +1,5 @@
-import { useContext, useState, createContext } from "react";
-
+import { useContext, createContext } from "react";
+import {useLocalStorage} from "../../src/hooks/useLocalStorage"
 export const shoppingContext = createContext({});
 
 export const useShoppingContext = () => {
@@ -7,7 +7,7 @@ export const useShoppingContext = () => {
 };
 
 function ShoppingContextProvider({ children }) {
-  const [cartItems, setCartItems] = useState([])
+  const [cartItems, setCartItems] = useLocalStorage("cartItems",[])
 
   const increaseProductQty = (id) => {
     setCartItems((currentItems) => {
