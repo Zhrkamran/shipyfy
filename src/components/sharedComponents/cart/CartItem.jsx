@@ -10,7 +10,8 @@ import { useShoppingContext } from "../../../context/ShoppingContext";
 import { numberWithCommas, calculateFinalPrice } from "../../../utils/number";
 
 function CartItem({ id, qty }) {
-  const { increaseProductQty, decreaseProductQty,removeProductFromCart } = useShoppingContext();
+  const { increaseProductQty, decreaseProductQty, removeProductFromCart } =
+    useShoppingContext();
   const [product, setProduct] = useState([]);
   useEffect(() => {
     async function getProductData() {
@@ -52,8 +53,9 @@ function CartItem({ id, qty }) {
           <span className="px-2">{qty}</span>
           {qty == 1 ? (
             <Button
-              onClick={()=> removeProductFromCart(id)}
-             className="bg-white text-red-700 hover:bg-white hover:text-red-700 cursor-pointer">
+              onClick={() => removeProductFromCart(id)}
+              className="bg-white text-red-700 hover:bg-white hover:text-red-700 cursor-pointer"
+            >
               <RiDeleteBinLine size={25} />
             </Button>
           ) : (

@@ -29,11 +29,18 @@ function CheckBox({ id, children, checked, onChange, className = "" }) {
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path>
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 13l4 4L19 7"
+            ></path>
           </svg>
         )}
       </div>
-      <label htmlFor={id} className="text-gray-900 text-sm font-medium select-none cursor-pointer">
+      <label
+        htmlFor={id}
+        className="text-gray-900 text-sm font-medium select-none cursor-pointer"
+      >
         {children}
       </label>
     </div>

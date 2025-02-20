@@ -1,5 +1,5 @@
 import { useContext, createContext } from "react";
-import {useLocalStorage} from "../../src/hooks/useLocalStorage"
+import { useLocalStorage } from "../../src/hooks/useLocalStorage";
 export const shoppingContext = createContext({});
 
 export const useShoppingContext = () => {
@@ -7,46 +7,50 @@ export const useShoppingContext = () => {
 };
 
 function ShoppingContextProvider({ children }) {
-  const [cartItems, setCartItems] = useLocalStorage("cartItems",[])
+  const [cartItems, setCartItems] = useLocalStorage("cartItems", []);
 
   const increaseProductQty = (id) => {
     setCartItems((currentItems) => {
-      let isProductNotExist = currentItems.find(item => item.id == id) == null;
-  
+      let isProductNotExist =
+        currentItems.find((item) => item.id == id) == null;
+
       if (isProductNotExist) {
         return [...currentItems, { id, qty: 1 }];
       } else {
-        return currentItems.map(item =>
+        return currentItems.map((item) =>
           item.id == id ? { ...item, qty: item.qty + 1 } : item
         );
       }
     });
-  }
-  
+  };
+
   const getProductQty = (id) => {
-    const item = cartItems.find(item => item.id == id);
+    const item = cartItems.find((item) => item.id == id);
     return item ? item.qty : 0;
   };
 
   const decreaseProductQty = (id) => {
     setCartItems((currentItems) => {
-      let isProductExist = currentItems.find(item => item.id == id);
-  
+      let isProductExist = currentItems.find((item) => item.id == id);
+
       if (!isProductExist) {
-        return currentItems; 
+        return currentItems;
       }
-  
+
       if (isProductExist.qty === 1) {
-        return currentItems.filter(item => item.id !== id); // 🔹 Remove product when qty reaches 0
+        return currentItems.filter((item) => item.id !== id); // 🔹 Remove product when qty reaches 0
       } else {
-        return currentItems.map(item =>
+        return currentItems.map((item) =>
           item.id == id ? { ...item, qty: item.qty - 1 } : item
         );
       }
     });
   };
-  
-  const cartQty = (cartItems || []).reduce((totalQty, item) => totalQty + item.qty, 0);
+
+  const cartQty = (cartItems || []).reduce(
+    (totalQty, item) => totalQty + item.qty,
+    0
+  );
 
   const removeProductFromCart = (id) => {
     setCartItems((currentItems) => {
@@ -54,9 +58,18 @@ function ShoppingContextProvider({ children }) {
       return currentItems.filter((item) => item.id != id);
     });
   };
-  
+
   return (
-    <shoppingContext.Provider value={{ cartItems,increaseProductQty,getProductQty,decreaseProductQty,cartQty,removeProductFromCart}}>
+    <shoppingContext.Provider
+      value={{
+        cartItems,
+        increaseProductQty,
+        getProductQty,
+        decreaseProductQty,
+        cartQty,
+        removeProductFromCart,
+      }}
+    >
       {children}
     </shoppingContext.Provider>
   );

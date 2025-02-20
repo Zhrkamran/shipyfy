@@ -1,15 +1,13 @@
-
-import Slider from '../../components/sharedComponents/slider/Slider'
+import Slider from "../../components/sharedComponents/slider/Slider";
 
 function Home() {
   return (
-   <>
-  
-   <section className="mt-3">
-   <Slider/>
-   </section>
-   </>
-  )
+    <>
+      <section className="mt-3">
+        <Slider />
+      </section>
+    </>
+  );
 }
 
-export default Home
+export default Home;

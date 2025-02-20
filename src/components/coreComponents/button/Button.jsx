@@ -1,11 +1,13 @@
-import { twMerge } from 'tailwind-merge'
+import { twMerge } from "tailwind-merge";
 function Button({ children, size, className, ...rest }) {
   const _size = sizeCheker(size);
   return (
     <button
       {...rest}
-      className={twMerge('rounded bg-red-700 hover:bg-red-900 text-white font-bold', `${className}  ${_size}`)}
-
+      className={twMerge(
+        "rounded bg-red-700 hover:bg-red-900 text-white font-bold",
+        `${className}  ${_size}`
+      )}
     >
       {children}
     </button>

@@ -4,7 +4,6 @@ import Banner from "../banner/Banner";
 import Cart from "../cart/Cart";
 import Navbar from "../navbar/Navbar";
 
-
 function Layouts({ children }) {
   return (
     <>
@@ -17,13 +16,12 @@ function Layouts({ children }) {
           <div className="flex justify-between items-center">
             <Navbar />
             <div className="flex items-center justify-center">
-             <div className="ml-6">
-             <Login/>
-             </div>
-             <Cart/>
+              <div className="ml-6">
+                <Login />
+              </div>
+              <Cart />
             </div>
           </div>
-        
         </Container>
       </header>
       {children}

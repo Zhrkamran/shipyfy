@@ -7,7 +7,6 @@ import "swiper/css/effect-fade";
 import { useEffect, useState } from "react";
 import { getHomeSliders } from "../../../services/api";
 
-
 function Slider() {
   const [sliders, setSliders] = useState([]);
   useEffect(() => {
@@ -24,7 +23,7 @@ function Slider() {
   return (
     <>
       <section>
-        <div  className="home-slider w-full">
+        <div className="home-slider w-full">
           {sliders && (
             <Swiper
               modules={[Navigation, Pagination, Autoplay, EffectFade]}
@@ -33,21 +32,16 @@ function Slider() {
               navigation
               pagination={{ clickable: true }}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
-             
               speed={1000}
               effect="fade"
             >
               {sliders.map((slider) => (
                 <SwiperSlide key={slider.id}>
-                  <img
-                    src={slider.image}
-                    className="w-full"
-                    alt={slider.alt}
-                  />
+                  <img src={slider.image} className="w-full" alt={slider.alt} />
                 </SwiperSlide>
               ))}
             </Swiper>
-          ) }
+          )}
         </div>
       </section>
     </>

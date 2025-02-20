@@ -23,24 +23,24 @@ function Store() {
     <Container>
       <div className="mt-6 grid grid-cols-12">
         <div className="col-span-12 lg:col-span-3 lg:w-[300px]">
-          <Filters/>
+          <Filters />
         </div>
         <div className="col-span-12 lg:col-span-9">
-        {loading ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 animate-pulse">
-          {[...Array(8)].map((_, index) => (
-            <SkeletonLoader key={index} />
-          ))}
-        </div>
-      ) : (
-        <div className="grid grid-cols-1 gap-x-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-3">
-          {products.map((item) => (
-            <Link key={item.id} to={`/product/${item.id}`}>
-              <ProductItem {...item} />
-            </Link>
-          ))}
-        </div>
-      )}
+          {loading ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 animate-pulse">
+              {[...Array(8)].map((_, index) => (
+                <SkeletonLoader key={index} />
+              ))}
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 gap-x-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-3">
+              {products.map((item) => (
+                <Link key={item.id} to={`/product/${item.id}`}>
+                  <ProductItem {...item} />
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </Container>

@@ -1,16 +1,14 @@
-import { Route, Routes } from 'react-router'
-import {routes} from './routes.constant'
+import { Route, Routes } from "react-router";
+import { routes } from "./routes.constant";
 
 function Approutes() {
   return (
-   <Routes>
-    {
-        routes.map(item=>(
-            <Route key={item.path} path={item.path} element={item.element}/>
-        ))
-    }
-   </Routes>
-  )
+    <Routes>
+      {routes.map((item) => (
+        <Route key={item.path} path={item.path} element={item.element} />
+      ))}
+    </Routes>
+  );
 }
 
-export default Approutes
+export default Approutes;

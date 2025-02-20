@@ -49,26 +49,39 @@ function Filters() {
         >
           ✖
         </button>
-      <div className="lg:w-full lg:border-1 lg:rounded-medium border-gray-300 rounded-2xl bg-neutral-000 p-4 ">
-        <h2 className="text-xl font-semibold mb-4">فیلترها</h2>
+        <div className="lg:w-full lg:border-1 lg:rounded-medium border-gray-300 rounded-2xl bg-neutral-000 p-4 ">
+          <h2 className="text-xl font-semibold mb-4">فیلترها</h2>
 
-   
-        <FilterSection title="برند">
-          <CheckBox id="brand1" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} className="mt-3">
-            آدرا
-          </CheckBox>
-          <CheckBox id="brand2" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} className="mt-3">
-          آر یو اکی
-          </CheckBox>
-          <CheckBox id="brand3" checked={isChecked} onChange={(e) => setIsChecked(e.target.checked)} className="mt-3">
-          آردن
-          </CheckBox>
-        </FilterSection>
+          <FilterSection title="برند">
+            <CheckBox
+              id="brand1"
+              checked={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+              className="mt-3"
+            >
+              آدرا
+            </CheckBox>
+            <CheckBox
+              id="brand2"
+              checked={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+              className="mt-3"
+            >
+              آر یو اکی
+            </CheckBox>
+            <CheckBox
+              id="brand3"
+              checked={isChecked}
+              onChange={(e) => setIsChecked(e.target.checked)}
+              className="mt-3"
+            >
+              آردن
+            </CheckBox>
+          </FilterSection>
 
-
-        <FilterSection title="محدوده قیمت">
-          <input type="range" className="w-full" />
-        </FilterSection>
+          <FilterSection title="محدوده قیمت">
+            <input type="range" className="w-full" />
+          </FilterSection>
         </div>
       </div>
     </>

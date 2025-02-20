@@ -92,19 +92,20 @@ body {
   width: 32px !important;
   height: 32px !important;
 }
-.swiper-button-prev::after,.swiper-button-next::after{
+.swiper-button-prev::after,
+.swiper-button-next::after {
   display: none !important;
 }
-.home-slider .swiper-button-next{
+.home-slider .swiper-button-next {
   right: 50px !important;
   left: auto !important;
   bottom: 24px !important;
   top: auto !important;
- }
- .home-slider .swiper-button-prev{
+}
+.home-slider .swiper-button-prev {
   bottom: 24px !important;
   top: auto !important;
- }
- .swiper-pagination-bullet-active {
-  background:#ed1944;
+}
+.swiper-pagination-bullet-active {
+  background: #ed1944;
 }
