@@ -38,7 +38,7 @@ function ShoppingContextProvider({ children }) {
       }
 
       if (isProductExist.qty === 1) {
-        return currentItems.filter((item) => item.id !== id); // 🔹 Remove product when qty reaches 0
+        return currentItems.filter((item) => item.id !== id); 
       } else {
         return currentItems.map((item) =>
           item.id == id ? { ...item, qty: item.qty - 1 } : item
@@ -47,14 +47,14 @@ function ShoppingContextProvider({ children }) {
     });
   };
 
-  const cartQty = (cartItems || []).reduce(
+  const cartQty = (cartItems).reduce(
     (totalQty, item) => totalQty + item.qty,
     0
   );
 
   const removeProductFromCart = (id) => {
     setCartItems((currentItems) => {
-      if (!currentItems || currentItems.length === 0) return []; // ✅ اگر سبد خالی است، کرش نکند
+      if (!currentItems || currentItems.length === 0) return [];
       return currentItems.filter((item) => item.id != id);
     });
   };
