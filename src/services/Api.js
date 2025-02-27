@@ -23,3 +23,11 @@ export async function getHomeBanners(placement) {
   const { data } = await client("/banners");
   return data.filter((item) => item.placement === placement);
 }
+export async function login([username,password]){
+  const {data}=await client({
+    method:"post",
+    url:"/login",
+    data:[username,password]
+  })
+  return data
+}

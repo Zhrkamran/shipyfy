@@ -1,14 +1,14 @@
-import Layouts from "./components/sharedComponents/layouts/Layouts";
+import AuthContextProvider from "./context/AuthContext";
 import ShoppingContextProvider from "./context/ShoppingContext";
 import Approutes from "./routes/Approutes";
 
 function App() {
   return (
-    <ShoppingContextProvider>
-      <Layouts>
+    <AuthContextProvider>
+      <ShoppingContextProvider>
         <Approutes />
-      </Layouts>
-    </ShoppingContextProvider>
+      </ShoppingContextProvider>
+    </AuthContextProvider>
   );
 }
 
