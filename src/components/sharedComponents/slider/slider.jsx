@@ -5,7 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import { useEffect, useState } from "react";
-import { getHomeSliders } from "../../../services/api";
+import { getHomeSliders } from "../../../services/Api";
 
 function Slider() {
   const [sliders, setSliders] = useState([]);
@@ -20,6 +20,17 @@ function Slider() {
     }
     getDataSliders();
   }, []);
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <>
       <section>
@@ -29,7 +40,7 @@ function Slider() {
               modules={[Navigation, Pagination, Autoplay, EffectFade]}
               spaceBetween={10}
               slidesPerView={1}
-              navigation
+              navigation={!isMobile}
               pagination={{ clickable: true }}
               autoplay={{ delay: 3000, disableOnInteraction: false }}
               speed={1000}
@@ -37,7 +48,12 @@ function Slider() {
             >
               {sliders.map((slider) => (
                 <SwiperSlide key={slider.id}>
-                  <img src={slider.image} className="w-full" alt={slider.alt} />
+                   {isMobile ? 
+                    <img src={slider.mobileImage} className="w-full" alt={slider.alt} />
+                    : 
+                     <img src={slider.desktopImage} className="w-full" alt={slider.alt} />
+                    }
+                 
                 </SwiperSlide>
               ))}
             </Swiper>

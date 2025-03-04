@@ -11,13 +11,31 @@ function Banner({ placement }) {
     getDataBanner();
   }, []);
 
-  return banners.map((item) => (
-    <img
-      key={item.id}
-      src={item.image}
-      className="h-full w-full object-cover"
-    />
-  ));
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return banners.map((item) => {
+    const imageUrl = isMobile
+      ? item.mobileImage || item.image
+      : item.desktopImage || item.image;
+  
+    return (
+      <img
+        key={item.id}
+        src={imageUrl}
+        className="h-full w-full object-cover"
+        alt={item.alt}
+      />
+    );
+  });
+  
 }
 
 export default Banner;

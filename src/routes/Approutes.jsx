@@ -19,7 +19,7 @@ function Approutes() {
             path={route.path}
             element={
               pathname == "/login" && isLogin ? (
-                <Navigate to="/" />
+                <Navigate to="/dashboard" />
               ) : (
                 route.element
               )

@@ -18,22 +18,24 @@ function ProductItem({
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="group relative border border-gray-300 rounded-2xl p-3 overflow-hidden"
+        className="flex flex-row lg:flex-col lg:items-center group relative border border-gray-300 rounded-2xl p-3 overflow-hidden"
       >
-        <div className="absolute right-1 top-1 z-10 flex w-full flex-wrap items-center gap-px lg:gap-0.5">
-          <span className="p-1 flex items-center justify-center gap-px rounded-2xl bg-red-700  text-white lg:gap-0.5 text-xs">
-            <BsFire size={15} className=" text-white text-4xl" />
-            پرفروش
-          </span>
+        <div className="flex flex-col">
+          <div className="absolute right-1 top-1 z-10 flex w-full flex-wrap items-center gap-px lg:gap-0.5">
+            <span className="p-1 flex items-center justify-center gap-px rounded-2xl bg-red-700  text-white lg:gap-0.5 text-xs">
+              <BsFire size={15} className=" text-white text-4xl" />
+              پرفروش
+            </span>
+          </div>
+          <motion.img
+            src={image}
+            alt={title}
+            className="w-[118px] h-[118px] lg:w-full object-contain   lg:aspect-auto lg:h-50 "
+            transition={{ duration: 0.5 }}
+            whileHover={{ scale: 1.1 }}
+          />
         </div>
-        <motion.img
-          src={image}
-          alt={title}
-          className=" w-full object-contain   lg:aspect-auto lg:h-50 "
-          transition={{ duration: 0.5 }}
-          whileHover={{ scale: 1.1 }}
-        />
-        <div className="mt-2 flex flex-col justify-around">
+        <div className="grow  lg:mt-2 flex flex-col justify-around">
           <p className="font-medium  lg:text-body-14 text-gray-500">{model}</p>
           <h3 className="font-bold line-clamp-2  lg:text-body-14 min-h-10">
             {title}

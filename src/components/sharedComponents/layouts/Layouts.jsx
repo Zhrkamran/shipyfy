@@ -7,8 +7,8 @@ import { useState, useEffect } from "react";
 import NavMobile from "../navbar/NavMobile";
 
 function Layouts({ children }) {
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);

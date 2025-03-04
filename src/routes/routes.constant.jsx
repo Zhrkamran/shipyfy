@@ -81,3 +81,8 @@ export const routes = [
     isPrivat: true,
   },
 ];
+export const menuItems = [
+  { label: "داشبورد", route: "/dashboard" },
+  { label: "تحلیل‌ها", route: "/analytics" },
+  { label: "تنظیمات", route: "/settings" },
+];

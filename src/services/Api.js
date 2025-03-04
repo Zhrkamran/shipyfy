@@ -1,6 +1,14 @@
 import axios from "axios";
+import Cookies from "js-cookie";
+
 const client = axios.create({
   baseURL: "http://localhost:3004",
+});
+const authClient = axios.create({
+  baseURL: "http://localhost:3004",
+  headers:{
+    token:Cookies.get("token")
+  }
 });
 export async function getProducts() {
   const { data } = await client("/products");
@@ -28,6 +36,14 @@ export async function login([username,password]){
     method:"post",
     url:"/login",
     data:[username,password]
+  })
+  return data
+}
+export async function createProduct(params){
+  const {data}=await client({
+    method:"post",
+    url:"/products",
+    data:params
   })
   return data
 }

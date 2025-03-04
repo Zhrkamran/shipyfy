@@ -1,5 +1,5 @@
-function Container({ children }) {
-  return <div className="container mx-auto">{children}</div>;
+function Container({ children,className }) {
+  return <div className={`container mx-auto ${className}`}>{children}</div>;
 }
 
 export default Container;

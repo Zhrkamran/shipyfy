@@ -20,7 +20,7 @@ function Store() {
     getProudatsData();
   }, []);
   return (
-    <Container>
+    <Container className="px-2 lg:px-0">
       <div className="mt-6 grid grid-cols-12">
         <div className="col-span-12 lg:col-span-3 lg:w-[300px]">
           <Filters />
@@ -33,7 +33,7 @@ function Store() {
               ))}
             </div>
           ) : (
-            <div className="grid grid-cols-1 gap-x-2 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-3">
+            <div className="grid grid-cols-1 gap-x-2 gap-y-2  lg:gap-y-5 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-3">
               {products.map((item) => (
                 <Link key={item.id} to={`/product/${item.id}`}>
                   <ProductItem {...item} />

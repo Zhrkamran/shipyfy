@@ -1,21 +1,19 @@
 
-import Cookies from "js-cookie";
-import { Navigate } from "react-router";
-import Button from "../../../components/coreComponents/button/Button";
 
+
+import { Route, Routes } from "react-router";
+import Approutes from "../../../routes/Approutes";
+import Sidebar from "./sidebar/Sidebar";
+import './style.css'
 
 
 
 const AdminLayouts = () => {
-  const handleLogout = () => {
-    Cookies.remove("token");
-    location.reload();
-    <Navigate to="/" />
-  };
+
   return (
-    <Button onClick={handleLogout}>
-    خروج از پنل کاربری
-   </Button>
+
+    <Sidebar/>
+
   );
 };
 

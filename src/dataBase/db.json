@@ -412,23 +412,27 @@
         "6"
       ]
     }
+   
   ],
   "slider": [
     {
       "id": "1",
-      "image": "https://nonegar14.ir/km/slider1.jpeg",
+      "desktopImage": "https://nonegar14.ir/km/slider1.jpeg",
+      "mobileImage": "https://nonegar14.ir/km/slider1-mob.jpeg",
       "alt": "اسلایدر1",
       "link": ""
     },
     {
       "id": "2",
-      "image": "https://nonegar14.ir/km/slider2.jpeg",
+      "desktopImage": "https://nonegar14.ir/km/slider2.jpeg",
+      "mobileImage": "https://nonegar14.ir/km/slider2-mob.jpeg",
       "alt": "اسلایدر2",
       "link": ""
     },
     {
       "id": "3",
-      "image": "https://nonegar14.ir/km/slider3.jpeg",
+      "desktopImage": "https://nonegar14.ir/km/slider3.jpeg",
+      "mobileImage": "https://nonegar14.ir/km/slider3-mob.jpeg",
       "alt": "اسلایدر3",
       "link": ""
     }
@@ -436,6 +440,8 @@
   "banners": [
     {
       "id": "1",
+      "desktopImage": "https://nonegar14.ir/km/banner-top.png",
+      "mobileImage": "https://nonegar14.ir/km/banner-top-mob.jpeg",
       "image": "https://nonegar14.ir/km/banner-top.png",
       "alt": "بنر 1",
       "link": "",
@@ -509,16 +515,18 @@
   "discount": [
     {
       "code": "test20",
-      "percent": "20"
+      "percent": "20",
+      "id": "efae"
     },
     {
       "code": "test40",
-      "percent": "40"
+      "percent": "40",
+      "id": "840b"
     },
     {
       "code": "test60",
-      "percent": "60"
+      "percent": "60",
+      "id": "e674"
     }
   ]
-
 }
